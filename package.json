@@ -1,11 +1,24 @@
 {
   "name": "@syr/jsx",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "syr jsx transform. turns jsx into ast.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir lib"
   },
+  "contributors": [
+    {
+      "name": "Caleb Meredith",
+      "email": "calebmeredith8@gmail.com",
+      "url": "https://github.com/calebmer"
+    },
+    {
+      "name": "Brandon Payton",
+      "email": "brandon@happycode.net",
+      "url": "http://happycode.net"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/syrjs/syr-jsx.git"
@@ -22,5 +35,17 @@
   "bugs": {
     "url": "https://github.com/syrjs/syr-jsx/issues"
   },
-  "homepage": "https://github.com/syrjs/syr-jsx#readme"
+  "homepage": "https://github.com/syrjs/syr-jsx#readme",
+  "dependencies": {
+    "babel-plugin-syntax-jsx": "^6.3.13",
+    "esutils": "^2.0.2",
+    "lodash": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0"
+  }
 }
