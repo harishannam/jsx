@@ -20,7 +20,7 @@ const uniqueId = 'guid';
 export default function ({
   types: t
 }) {
-  
+
   /* ==========================================================================
    * Initial configuration
    * ======================================================================= */
@@ -30,7 +30,8 @@ export default function ({
       useNew = false,
         module: constructorModule,
         function: constructorFunction,
-        useVariables = false
+        useVariables = false,
+        useGuid = true
     } = state.opts
 
     let variablesRegex, jsxObjectTransformer
@@ -183,16 +184,23 @@ export default function ({
       return value === '' ? null : t.stringLiteral(value)
     }
 
-    const JSXElement = node => jsxObjectTransformer(
-      t.objectExpression([
+    const JSXElement = node => {
+      let objExpression = [
         t.objectProperty(t.identifier(nameProperty),
           JSXElementName(node.openingElement.name)),
         t.objectProperty(t.identifier(attributesProperty),
           JSXAttributes(node.openingElement.attributes)),
-        t.objectProperty(t.identifier(childrenProperty), JSXChildren(node.children)),
-        t.objectProperty(t.identifier(uniqueId), t.stringLiteral(UUIDManager.generate()))
-      ])
-    )
+        t.objectProperty(t.identifier(childrenProperty), JSXChildren(node.children))
+      ]
+
+      if(state.opts.useGuid) {
+        objExpression.push(t.objectProperty(t.identifier(uniqueId), t.stringLiteral(UUIDManager.generate())));
+      }
+
+      return jsxObjectTransformer(
+        t.objectExpression(objExpression)
+      )
+    }
 
     const JSXChild = transformOnType({
       JSXText,
