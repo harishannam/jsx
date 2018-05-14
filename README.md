@@ -1,2 +1,3 @@
 # syr-jsx
-our jsx transform forked from caleb meredith
+
+This babel transform converts JSX to an AST object.
