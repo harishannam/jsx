@@ -1,6 +1,6 @@
 {
   "name": "@syr/jsx",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "syr jsx transform. turns jsx into ast.",
   "main": "lib/index.js",
   "scripts": {
@@ -17,6 +17,16 @@
       "name": "Brandon Payton",
       "email": "brandon@happycode.net",
       "url": "http://happycode.net"
+    },
+    {
+      "name": "Siddharth Malkireddy",
+      "email": "simalkireddy@paypal.com",
+      "url": "https://github.com/MSiddharthReddy"
+    },
+    {
+      "name": "Derek Anderson",
+      "email": "dereanderson@paypal.com",
+      "url": "https://github.com/dmikey"
     }
   ],
   "repository": {
